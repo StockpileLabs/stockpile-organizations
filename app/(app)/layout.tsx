@@ -53,24 +53,24 @@ const AppLayout = async ({ children }: { children: React.ReactNode }) => {
 
   return (
     <body>
-      <div className="flex flex-col md:flex-row h-screen min-w-full bg-white">
+      <div className="flex flex-col md:flex-row h-screen min-w-full">
         <aside
           id="sidebar"
           className="hidden md:block md:left-0 md:top-0 md:w-3/12 lg:w-3/12 z-40 h-auto md:h-screen md:fixed"
           aria-label="Sidebar"
         >
-          <div className="flex h-auto md:h-full flex-col overflow-y-auto justify-between md:border-r border-slate-200 px-3 py-4  bg-slate-200">
+          <div className="flex h-auto md:h-full flex-col overflow-y-auto justify-between px-3 py-4 bg-[#080D19]/30">
             <div>
               {" "}
               <Link href="/">
                 <div className="mb-10 flex items-center rounded-lg px-3 py-2 text-slate-900 dark:text-white">
                   <Image
-                    src="https://drive.google.com/uc?export=download&id=1UjZG82vU6aQHiGxzZEzoTneP7TTSsKda"
+                    src="/StockpileLogoWhite.svg"
                     width={0}
                     height={0}
                     sizes="100vw"
                     style={{ width: "150px", height: "auto" }}
-                    alt="Mercure Logo"
+                    alt="Stockpile Logo"
                   />
                 </div>
               </Link>
@@ -79,17 +79,17 @@ const AppLayout = async ({ children }: { children: React.ReactNode }) => {
                   <li key={tab.route}>
                     <a
                       href={tab.route}
-                      className={`flex items-center rounded-lg px-4 py-3 text-slate-900 
+                      className={`flex items-center rounded-lg px-4 py-3 text-white 
                     
         ${
           (path!.startsWith(`${tab.route}/`) && tab.route != "/") ||
           tab.route === path
-            ? "bg-slate-400"
-            : "hover:bg-slate-400"
+            ? "bg-gradient-to-r from-[#0D2EE4]/25 to-[#469FFE]/50"
+            : "hover:bg-gradient-to-r from-[#0D2EE4]/25 to-[#469FFE]/50"
         }`}
                     >
                       {tab.icon}
-                      <span className="ml-3 flex-1 whitespace-nowrap text-base text-black">
+                      <span className="ml-3 flex-1 whitespace-nowrap text-base text-white">
                         {tab.name}
                       </span>
                     </a>
